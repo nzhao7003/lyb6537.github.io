@@ -1,6 +1,6 @@
 ---
 layout: post
-title: thread_example
+title: Linux多线程的常用变量和函数
 category: 技术
 tags: Thread
 keywords: 
