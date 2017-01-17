@@ -1,6 +1,11 @@
-## 欢迎来到刘云宾的博客
-
-### 多线程的简单例子
+---
+layout: post
+title: thread_example
+category: 技术
+tags: Linux
+keywords: 
+description: 
+---
 
 #### 函数流程
 主函数创建st_len个线程，每个线程将字符串st的指定索引所对应的字符打印COUNT次，通过条件变量和互斥锁使得打印出的顺序和指定的顺序相同。
