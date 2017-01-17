@@ -1,0 +1,17 @@
+<p>如果要生成ffplay必须安装SDL，安装过程见 https://github.com/lyb6537/SDL/tree/master/Linux</p>
+<ol style="list-style-type: decimal">
+<li>git clone https://git.ffmpeg.org/ffmpeg.git ffmpeg</li>
+<li>./configure --enable-shared --prefix=/usr/local/ffmpeg 指定生成动态库和指定安装目录，生成config.h config.mak</li>
+<li>make &amp;&amp; sudo make install</li>
+</ol>
+<h2 id="安装完成后在usrlocalffmpeg下生成了三个文件夹">安装完成后，在/usr/local/ffmpeg下生成了三个文件夹</h2>
+<ol style="list-style-type: decimal">
+<li>sudo sh -c &quot;echo /usr/local/ffmpeg/lib &gt; ffmpeg.conf&quot; ## sh -c 使得一行命令都具有sudo权限</li>
+<li>sudo ldconfig     重新读取动态库 <strong>这里指的是程序运行时的动态库</strong></li>
+<li>sudo cp -r /usr/local/ffmpeg/lib* /usr/include/</li>
+<li>sudo ln -s /usr/local/ffmpeg/bin/ff* /usr/bin/</li>
+<li>bin 可执行文件</li>
+<li>ffplay 播放</li>
+<li>ffmpeg 转码</li>
+<li>ffprobe 查看文件格式</li>
+</ol>

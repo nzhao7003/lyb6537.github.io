@@ -1,0 +1,29 @@
+<h2 id="这是关于多线程的常用变量和函数的使用">这是关于多线程的常用变量和函数的使用</h2>
+<ul>
+<li><code>include&lt;pthread.h&gt;</code></li>
+<li>gcc -o thread main.c -pthread</li>
+</ul>
+<h3 id="pthread">pthread</h3>
+<ul>
+<li>pthread_t id;----------------------------------线程ID</li>
+<li>pthread_create(&amp;id, NULL, thread, st);---------线程的创建</li>
+<li>pthread_join(id, NULL);------------------------线程等待</li>
+<li>pthread_exit(st);------------------------------线程退出</li>
+</ul>
+<h3 id="pthread_mutex">pthread_mutex</h3>
+<ul>
+<li>pthread_mutex_t mutex;-------------------------互斥锁ID</li>
+<li>pthread_mutex_init(&amp;mutex, NULL);--------------互斥锁初始化</li>
+<li>pthread_mutex_lock(&amp;mutex);--------------------互斥锁加锁</li>
+<li>pthread_mutex_unlock(&amp;mutex);------------------互斥锁解锁</li>
+<li>pthread_mutex_destroy(&amp;mutex);-----------------互斥锁资源释放</li>
+</ul>
+<h3 id="pthread_cond">pthread_cond</h3>
+<ul>
+<li>pthread_cond_t cond;---------------------------条件变量ID</li>
+<li>pthread_cond_init(&amp;cond, NULL);----------------条件变量初始化</li>
+<li>pthread_cond_wait(&amp;cond, &amp;mutex);--------------条件变量阻塞</li>
+<li>pthread_cond_signal(&amp;cond);--------------------条件变量解除阻塞</li>
+<li>pthread_cond_broadcast(&amp;cond);-----------------条件变量解除所有线程上的阻塞</li>
+<li>pthread_cond_destroy(&amp;cond);-------------------条件变量释放资源</li>
+</ul>
