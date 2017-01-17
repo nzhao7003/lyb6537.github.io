@@ -1,3 +1,12 @@
+---
+layout: post
+title: thread_example
+category: 技术
+tags: Thread
+keywords: 
+description: 
+---
+
 ## 这是关于多线程的常用变量和函数的使用
 * `include<pthread.h>`
 * gcc -o thread main.c -pthread
