@@ -1,6 +1,6 @@
 ---
 layout: post
-title: thread_example
+title: 多线程的简单例子
 category: 技术
 tags: Thread
 keywords: 
