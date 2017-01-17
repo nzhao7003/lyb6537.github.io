@@ -2,7 +2,7 @@
 layout: post
 title: thread_example
 category: 技术
-tags: Linux
+tags: Thread
 keywords: 
 description: 
 ---
