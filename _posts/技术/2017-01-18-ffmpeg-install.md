@@ -14,7 +14,7 @@ description:
 ### ffmpeg linux 安装过程
 ```
 $ git clone https://git.ffmpeg.org/ffmpeg.git ffmpeg
-$ ./configure --enable-shared --prefix=/usr/local/ffmpeg #指定生成动态库和指定安装目录，生成config.h config.mak 
+$ ./configure --enable-shared --prefix=/usr/local/ffmpeg #指定生成动态库和指定安装目录 
 $ make && sudo make install
 ```
 
