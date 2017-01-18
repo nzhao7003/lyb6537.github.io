@@ -1,6 +1,15 @@
-ffmpeg 3.2 ndk9d linux32  android 动态库生成过程 [东软镜像](http://mirrors.neusoft.edu.cn/)<br> 
+---
+layout: post
+title: FFmpeg生成android下的动态库
+category: 技术
+tags: FFmpeg
+keywords: 
+description: 
+---
 
-* git clone https://git.ffmpeg.org/ffmpeg.git ffmpeg 下载NDK  http://www.androiddevtools.cn/ 
+## android 动态库生成过程 
+* git clone https://git.ffmpeg.org/ffmpeg.git ffmpeg 
+* 下载NDK  [androiddevtools](http://www.androiddevtools.cn/) 
 * 更改 configure 文件
   将
   
@@ -21,4 +30,4 @@ ffmpeg 3.2 ndk9d linux32  android 动态库生成过程 [东软镜像](http://mi
 ```
 
 * 编写build_android.sh 相关变量按照各自的环境修改
-* 执行 ./build_android.sh && make && make install   然后会生成动态库文件
+* ./build_android.sh && make && make install  然后会生成动态库文件
