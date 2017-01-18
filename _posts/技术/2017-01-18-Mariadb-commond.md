@@ -74,5 +74,6 @@ delete from table_name where condition;
 4. SHOW VARIABLES LIKE 'char%'
 
 ## 参考资源
-1. http://www.w3school.com.cn/sql/index.asp
-2. http://www.yiibai.com/mysql/mysql_quick_start.html
+http://www.w3school.com.cn/sql/index.asp
+
+http://www.yiibai.com/mysql/mysql_quick_start.html
