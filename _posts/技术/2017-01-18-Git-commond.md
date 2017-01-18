@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Git在ubuntu的安装以及常用命令
+title: Git常用命令
 category: 技术
 tags: Git
 keywords: 
