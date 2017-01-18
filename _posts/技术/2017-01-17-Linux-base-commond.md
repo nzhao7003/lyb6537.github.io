@@ -1,12 +1,29 @@
 ---
 layout: post
-title: Linux常用命令
+title: Linux基础知识和常用命令
 category: 技术
 tags: Linux
 keywords: 
 description: 
 ---
 
+## Linux基础知识
+```
+/etc/fstab 开机挂载
+umask 文件默认权限
+chattr lsattr 文件隐藏属性
+SUID 文件执行者在执行文件时具有文件所有者的权限 例如 /usr/bin/passwd
+SGID 目录 用户新建文件所属的用户组与此目录的用户组相同
+SBIT 目录 只有root和文件的所有者可以删除 例如/tmp
+pwd -P                   # -P：代表显示正确的完整路径，而不是连接路径
+chmod 4755 filename
+chmod u=rwxs,go=x test; ls -l test      # 配置权限为-rws--x--x的模样
+chmod g+s,o+t test; 
+ls -l test          # 配置权限为-rws--s--t，即加入SGID,SBIT权限
+```
+
+## Linux常用命令
+---
 ### 安装，查找，卸载软件   
 ```
 sudo apt-get install   #安装软件
@@ -28,14 +45,15 @@ ngg                      #跳转到指定行
 :set fileencoding=utf-8  #编码格式转换  
 ```
 
-### sed commond
+### sed awk commond
 ```
-sed -n '1,$p'        input.txt #打印指定的行       
-sed -n '/lyb/p'      input.txt #匹配正则表达式
-sed -n '1,2d'        input.txt #删除指定行          
-sed -n '1,3a Hello'  input.txt #1行到3行后添加 Hello  
-sed -n '1,3c Ha'     input.txt #代替
-sed -n 's/old/new/g' input.txt #正则代替
+sed -n '1,$p'        input.txt                    #打印指定的行       
+sed -n '/lyb/p'      input.txt                    #匹配正则表达式
+sed -n '1,2d'        input.txt                    #删除指定行          
+sed -n '1,3a Hello'  input.txt                    #1行到3行后添加 Hello  
+sed -n '1,3c Ha'     input.txt                    #代替
+sed -n 's/old/new/g' input.txt                    #正则代替
+cat /etc/passwd | awk -F ':' '{print $1}'         #对行进行切割
 ```
 
 ### 惯用的关机命令：
@@ -98,7 +116,7 @@ service mysql restart          #服务重启
 uname -r           #查看内核版本，稳定版本的偶数版，如2.6.x，开发中版本，如2.5.x
 ```
 
-### 和视音频  相关的命令
+### 和FFmpeg android 相关的命令
 ```
 ffmpeg -codecs                                         #查看支持的编码格式
 mediainfo input.mp4                                    #查看视音频的封装格式和编码格式
@@ -107,15 +125,29 @@ mksdcard 128M sdcard.img                               #创建镜像文件
 android create avd -n Sim2 -t 1 -c "the path to SD"    #创建avd
 ```
 
+### size a.out 显示一个应用程序所占的各个空间
+```
+BSS Block Started by Symbol      #存放未初始化的全局变量
+data segment                     #存放已初始化的全局变量
+code segment                     #代码段
+heap                             #动态分配的数据
+stack                            #局部变量
+```
+
+
 ### 其他常用命令
 ```
 bc                 #计算器
 cal 10 2014        #显示日历
 date               #显示日期与实践
 pandoc -f markdown -t html -o demo.html demo.md   #将markdown转化为html
-cat /etc/passwd | awk -F ':' '{print $1}'         #对行进行切割
 ```
 
-
+### ctags commond
+```
+sudo apt-get install ctags
+ctags -R                       #递归创建tags文件
+vim -t tag                     #tag为要查找的变量或函数名
+```
 
 
