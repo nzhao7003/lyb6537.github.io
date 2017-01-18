@@ -1,6 +1,6 @@
 ---
 layout: post
-title: FFmpeg在ubuntu下安装
+title: FFmpeg在ubuntu下的安装
 category: 技术
 tags: FFmpeg
 keywords: 
