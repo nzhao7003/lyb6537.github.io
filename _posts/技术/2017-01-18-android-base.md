@@ -26,7 +26,7 @@ description:
 2. . /etc/bash.bashrc 之后使用 java -version && javac -version 验证安装
  
 ## ADT bundle 的安装 
-在eclipse里 Window->Android SDK Manager里更新sdk 配置见 [and]http://www.androiddevtools.cn/ 重启eclipse生效
+在eclipse里 Window->Android SDK Manager里更新sdk 配置见 [androiddevtools](http://www.androiddevtools.cn/) 重启eclipse生效
 
 ## ADT 基础概念
 1. ADT bundle: 用于开发android项目的eclipse
