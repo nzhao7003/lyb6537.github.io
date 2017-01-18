@@ -8,13 +8,14 @@ description:
 ---
 
 ## git在ubuntu的安装
+```
 1. sudo apt-get install git
 2. git config --global user.name "user_name"
 3. git config --global user.email "email_id"
 5. ssh-keygen -C 'you_email_address@gmail.com' -t rsa                          # 产生密钥
 6. 复制 ~/.ssh/id_rsa.pub 的内容到github官网 https://github.com/settings/keys
 7. ssh -v git@github.com                                                       # 测试连接
-
+```
 
 ## git常用命令
 ###git常用流程
