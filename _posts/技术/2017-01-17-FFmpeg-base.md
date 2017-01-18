@@ -1,3 +1,13 @@
+---
+layout: post
+title: 视音频基础知识
+category: 技术
+tags: FFmpeg
+keywords: 
+description: 
+---
+
+
 # 视频播放的过程
 1. 解协议
 2. 解封装 封装以后生成TS流
