@@ -9,21 +9,44 @@ description:
 
 ## Linux基础知识
 ```
-/etc/fstab 开机挂载
-umask 文件默认权限
-chattr lsattr 文件隐藏属性
-SUID 文件执行者在执行文件时具有文件所有者的权限 例如 /usr/bin/passwd
-SGID 目录 用户新建文件所属的用户组与此目录的用户组相同
-SBIT 目录 只有root和文件的所有者可以删除 例如/tmp
-pwd -P                   # -P：代表显示正确的完整路径，而不是连接路径
-chmod 4755 filename
-chmod u=rwxs,go=x test; ls -l test      # 配置权限为-rws--x--x的模样
-chmod g+s,o+t test; 
-ls -l test          # 配置权限为-rws--s--t，即加入SGID,SBIT权限
+/etc/fstab      #开机挂载
+SUID            # 文件执行者在执行文件时具有文件所有者的权限 例如 /usr/bin/passwd +s
+SGID            #目录 用户新建文件所属的用户组与此目录的用户组相同 +s
+SBIT            #目录 只有root和文件的所有者可以删除 例如/tmp +t
 ```
 
 ## Linux常用命令
 ---
+
+### 常用命令
+```
+dd                               #制作大文件
+df -hT                           #查看挂载在当前设备上的文件系统的使用情况
+du -sh / home                    #显示某一目录下所有文件的大小
+fdisk -l                         #显示所有未挂载的设备
+free -h                          #显示内存的使用情况
+jobs -l                          #显示所有的后台工作
+fg %jobnumber                    #将指定后台工作移到前台
+kiil -9 pid                      #强制删除某一进程
+ln                               #设置硬链接和软连接
+mkfs                             #格式化
+mount                            #挂载设备
+ps                               #显示当前用户的进程
+ps aux                           #显示所有用户的进程
+route -n                         #显示路由表
+ss -tua                          #显示系统已启用的服务
+systemctl enable http.service    #设置服务的启动，重启，停止，以及是否开机启动
+service mysql restart            #服务重启
+uname -r                         #查看内核版本，稳定版本的偶数版，如2.6.x，开发中版本，如2.5.x
+bc                               #计算器
+cal 10 2014                      #显示日历
+date                             #显示日期与实践
+pwd -P                           # -P：代表显示正确的完整路径，而不是连接路径
+pandoc -f markdown -t html -o demo.html demo.md   #将markdown转化为html
+umask                            #文件默认权限
+chattr lsattr                    #文件隐藏属性
+```
+
 ### 安装，查找，卸载软件   
 ```
 sudo apt-get install   #安装软件
@@ -94,28 +117,6 @@ pkg-config libavcodec --cflags                                              #显
 pkg-config --modversion libavcodec                                          #显示数据库的版本信息
 ```
 
-### 和系统管理相关的命令
-```
-dd                 #制作大文件
-df -hT             #查看挂载在当前设备上的文件系统的使用情况
-du -sh / home      #显示某一目录下所有文件的大小
-fdisk -l           #显示所有未挂载的设备
-free -h            #显示内存的使用情况
-jobs -l            #显示所有的后台工作
-fg %jobnumber      #将指定后台工作移到前台
-kiil -9 pid        #强制删除某一进程
-ln                 #设置硬链接和软连接
-mkfs               #格式化
-mount              #挂载设备
-ps                 #显示当前用户的进程
-ps aux             #显示所有用户的进程
-route -n           #显示路由表
-ss -tua            #显示系统已启用的服务
-systemctl enable http.service  #设置服务的启动，重启，停止，以及是否开机启动
-service mysql restart          #服务重启
-uname -r           #查看内核版本，稳定版本的偶数版，如2.6.x，开发中版本，如2.5.x
-```
-
 ### 和FFmpeg android 相关的命令
 ```
 ffmpeg -codecs                                         #查看支持的编码格式
@@ -132,15 +133,6 @@ data segment                     #存放已初始化的全局变量
 code segment                     #代码段
 heap                             #动态分配的数据
 stack                            #局部变量
-```
-
-
-### 其他常用命令
-```
-bc                 #计算器
-cal 10 2014        #显示日历
-date               #显示日期与实践
-pandoc -f markdown -t html -o demo.html demo.md   #将markdown转化为html
 ```
 
 ### ctags commond
