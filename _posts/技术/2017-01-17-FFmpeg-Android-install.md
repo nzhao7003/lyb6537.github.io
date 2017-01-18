@@ -29,5 +29,9 @@ description:
   SLIB_INSTALL_LINKS='$(SLIBNAME)'   
 ```
 
-* 编写build_android.sh 相关变量按照各自的环境修改 [build—_android.sh](https://github.com/lyb6537/develop-resource/tree/master/FFmpeg/Android)
+* 编写build_android.sh 相关变量按照各自的环境修改 
 * ./build_android.sh && make && make install 然后会生成动态库文件
+
+
+## 参考资料
+[build_android.sh文件](https://github.com/lyb6537/develop-resource/tree/master/FFmpeg/Android)
