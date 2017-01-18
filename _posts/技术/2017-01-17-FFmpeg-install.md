@@ -11,7 +11,7 @@ description:
 1. 从 [SDL官网](http://www.libsdl.org/) 下载SDL源码
 2. ./configure && make && sudo make install
 
-### ffmpeg linux 安装过程
+### ffmpeg ubuntu 安装过程
 ```
 $ git clone https://git.ffmpeg.org/ffmpeg.git ffmpeg
 $ ./configure --enable-shared --prefix=/usr/local/ffmpeg #指定生成动态库和指定安装目录 
