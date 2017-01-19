@@ -18,3 +18,5 @@ $ systemctl stop         httpd.service          #停止服务
 $ systemctl restart      httpd.service          #重启服务
 ```
  
+## 参考资料
+1. [linux_commond](http://man.linuxde.net/)
